@@ -1,0 +1,183 @@
+{
+  "Key-Value-Store": {
+    "caller_disable_lcar_key": "0",
+    "caller_exit_key": "#",
+    "cf_answer_call": false,
+    "cf_capture_groups": {},
+    "cf_critical_call": true,
+    "cf_flow": {
+      "module": "branch_variable",
+      "data": {
+        "variable": "zone_with_acdc",
+        "scope": "custom_channel_vars"
+      },
+      "children": {
+        "true": {
+          "module": "branch_variable",
+          "data": {
+            "variable": "application_zone",
+            "scope": "custom_channel_vars"
+          },
+          "children": {
+            "hni6": {
+              "module": "temporal_route",
+              "data": {
+                "rules": []
+              },
+              "children": {
+                "_": {
+                  "module": "pivot",
+                  "data": {
+                    "voice_url": "http://pivot-service:9999/api/v1/pivot/voice_channel/1068/group/52913b5b-2ca1-4430-8011-9b57da21618d/distribute/9e1ee9f1-ad6e-437a-98af-2447d141e110",
+                    "req_format": "kazoo",
+                    "req_body_format": "json",
+                    "method": "post",
+                    "debug": false
+                  },
+                  "children": {
+                    "_": {
+                      "module": "set_variables",
+                      "data": {
+                        "custom_application_vars": {
+                          "auto_transfer_from": "1068"
+                        }
+                      },
+                      "children": {
+                        "_": {
+                          "module": "transfer",
+                          "data": {
+                            "transfer_type": "blind",
+                            "target": "106x_default_routing",
+                            "captures": [
+                              "no_match"
+                            ]
+                          },
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "_": {
+          "module": "resources",
+          "data": {
+            "use_local_resources": true,
+            "to_did": "1068",
+            "outbound_flags": [],
+            "ignore_early_media": false,
+            "dynamic_flags": [
+              "zone"
+            ],
+            "custom_sip_headers": {
+              "P-IVR-Call-Request": "{sip_req_user}",
+              "P-IVR-Call-ID": "{sip_call_id}"
+            },
+            "caller_id_type": "external"
+          },
+          "children": {}
+        }
+      }
+    },
+    "cf_flow_id": "6d26421b5e762b8e052b764ed9dfb5d8",
+    "cf_flow_name": "Kênh 1068",
+    "cf_last_action": "cf_set_variables",
+    "cf_metaflow": false,
+    "cf_no_match": false,
+    "cf_old_action": "cf_pivot",
+    "overflow": {
+      "Overflow-ID": "1747580617834-8d4093c9",
+      "Overflowing": false,
+      "First-Time-Acd": true,
+      "Queue-Unix-Time-Ms": 1747580617834
+    }
+  },
+  "Account-DB": "account%2F2b%2Fab%2F475dd0ee591598ef370f113e7075",
+  "Account-ID": "2bab475dd0ee591598ef370f113e7075",
+  "Call-Bridged": false,
+  "Call-Direction": "inbound",
+  "Call-ID": "BACAA2C7283C4151C4F2B897@3470ffffffff",
+  "Callee-ID-Number": "1068",
+  "Caller-ID-Name": "392975086",
+  "Caller-ID-Number": "392975086",
+  "Control-Queue": "kazoo_apps@hni6-ecallmgr-0.hni6-nodes.ipcc.svc.cluster.local-ecallmgr_call_control-<0.1030.861>-ef05bf49",
+  "Controller-Queue": "kazoo_apps@hni6-kapps-0.hni6-nodes.ipcc.svc.cluster.local-cf_exe-<0.4437.2781>-a346c324",
+  "Custom-Application-Vars": {
+    "voiceChannelNumber": "1068",
+    "cf_route_request": "1068@10.52.125.35",
+    "cf_route_id": "1747580617706-d6096a3f",
+    "distribute": "9e1ee9f1-ad6e-437a-98af-2447d141e110",
+    "channel": "fbbb2ae8-783e-459e-bdad-4e77b74649fa",
+    "IPCCBLACKLIST_1068": "0",
+    "member_customer_level": "0",
+    "originalVoiceChannelNumber": "1068"
+  },
+  "Custom-Channel-Vars": {
+    "Zone-With-Acdc": "true",
+    "Resource-Type": "offnet-origination",
+    "Privacy-Hide-Number": false,
+    "Privacy-Hide-Name": false,
+    "Inception": "1068@10.52.125.35",
+    "Ignore-Display-Updates": "true",
+    "Fetch-ID": "9779e801-d8a7-48a5-bc6a-465147d69ee6",
+    "Channel-Authorized": "true",
+    "CallFlow-ID": "6d26421b5e762b8e052b764ed9dfb5d8",
+    "Call-Interaction-ID": "63914799817-4c9864f4",
+    "Application-Zone": "hni6",
+    "Application-Node": "kazoo_apps@hni6-kapps-0.hni6-nodes.ipcc.svc.cluster.local",
+    "Application-Name": "callflow",
+    "Account-Name": "cc",
+    "Account-ID": "2bab475dd0ee591598ef370f113e7075",
+    "Caller-ID-Number": "392975086",
+    "Caller-ID-Name": "392975086",
+    "distribute": "9e1ee9f1-ad6e-437a-98af-2447d141e110",
+    "channel": "fbbb2ae8-783e-459e-bdad-4e77b74649fa",
+    "IPCCBLACKLIST_1068": "0",
+    "member_customer_level": "0",
+    "originalVoiceChannelNumber": "1068",
+    "voiceChannelNumber": "1068",
+    "cf_route_id": "1747580617706-d6096a3f",
+    "cf_route_request": "1068@10.52.125.35",
+    "Overflowing": false,
+    "Overflow-ID": "1747580617834-8d4093c9",
+    "Voice-Channel-Group": "52913b5b-2ca1-4430-8011-9b57da21618d",
+    "Voice-Channel-Number": "1068"
+  },
+  "Custom-SIP-Headers": {
+    "X-AUTH-PORT": "5060",
+    "X-AUTH-IP": "10.51.9.7",
+    "P-Early-Media": "supported",
+    "P-Charging-Vector": "icid-value=SIkgAAW7crCyPcE0cMwFTwA-;icid-generated-at=10.51.9.7;orig-ioi=10.51.9.7"
+  },
+  "Fetch-ID": "9779e801-d8a7-48a5-bc6a-465147d69ee6",
+  "From": "392975086@10.51.9.7",
+  "From-Realm": "10.51.9.7",
+  "From-Tag": "6.U4.Y7AeB2i1U_5",
+  "From-User": "392975086",
+  "Inception": "1068@10.52.125.35",
+  "Is-Recording": false,
+  "Is-Call-Forward": false,
+  "Language": "en-us",
+  "Message-Left": false,
+  "Request": "1068@10.52.125.35",
+  "Request-Realm": "10.52.125.35",
+  "Request-User": "+841068",
+  "Resource-Type": "audio",
+  "Switch-Hostname": "ipcc-02.local",
+  "Switch-Nodename": "fs8621@ipcc-02.local",
+  "Switch-URI": "sip:171.229.16.93:11601",
+  "Switch-URL": "sip:mod_sofia@171.229.16.93:11601",
+  "To": "1068@10.52.125.35",
+  "To-Realm": "10.52.125.35",
+  "To-User": "1068",
+  "Channel-Created-Time": 1747580617653455,
+  "Event-Name": "CHANNEL_QUEUE",
+  "Event-Category": "call_event",
+  "Unix-Time-Ms": 1747580617834,
+  "IPCC-Custom-Vars": {
+    "CHANNEL_QUEUE": "da92390c8c96b7cdebc9f5a6d8963710"
+  }
+}

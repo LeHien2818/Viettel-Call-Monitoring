@@ -1,0 +1,42 @@
+{
+  "To-Uri": "1068@10.52.125.35",
+  "To": "1068@10.52.125.35",
+  "Unix-Time-Us": 1747580617653455,
+  "Unix-Time-Ms": 1747580617653,
+  "Timestamp": 63914799817,
+  "Switch-URL": "sip:mod_sofia@171.229.16.93:11601",
+  "Switch-URI": "sip:171.229.16.93:11601",
+  "Switch-Nodename": "fs8621@ipcc-02.local",
+  "Switch-Hostname": "ipcc-02.local",
+  "Request": "1068@10.52.125.35",
+  "Presence-ID": "392975086@10.51.9.7",
+  "Media-Server": "ipcc-02.local",
+  "From-Uri": "392975086@10.51.9.7",
+  "From-Tag": "6.U4.Y7AeB2i1U_5",
+  "From": "392975086@10.51.9.7",
+  "Disposition": "DELAYED NEGOTIATION",
+  "Custom-SIP-Headers": {
+    "X-AUTH-PORT": "5060",
+    "X-AUTH-IP": "10.51.9.7",
+    "P-Early-Media": "supported",
+    "P-Charging-Vector": "icid-value=SIkgAAW7crCyPcE0cMwFTwA-;icid-generated-at=10.51.9.7;orig-ioi=10.51.9.7"
+  },
+  "Custom-Channel-Vars": {
+    "Account-ID": "2bab475dd0ee591598ef370f113e7075"
+  },
+  "Custom-Application-Vars": {},
+  "Channel-State": "INIT",
+  "Channel-Name": "sofia/sipinterface_mpbn/392975086@10.51.9.7",
+  "Channel-Created-Time": 1747580617653455,
+  "Channel-Call-State": "DOWN",
+  "Caller-ID-Number": "392975086",
+  "Caller-ID-Name": "392975086",
+  "Call-Direction": "inbound",
+  "Call-ID": "BACAA2C7283C4151C4F2B897@3470ffffffff",
+  "Node": "kazoo_apps@hni6-ecallmgr-0.hni6-nodes.ipcc.svc.cluster.local",
+  "Msg-ID": "1747580617653455",
+  "Event-Name": "CHANNEL_CREATE",
+  "Event-Category": "call_event",
+  "App-Version": "4.0.0",
+  "App-Name": "ecallmgr"
+}
