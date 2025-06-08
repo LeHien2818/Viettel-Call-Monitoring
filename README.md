@@ -20,3 +20,6 @@ Access kafka container, create 2 default topics:
 - output-call-topic 
 
 After that, run 3 services on backend, Triggered simulation scenario by send GET request to http://localhost:8082/push-call
+
+## Evaluation
+Run prometheus and grafana in docker through host network to observe metrics

@@ -46,7 +46,7 @@ export function LoginPage() {
           JSON.stringify({
             username,
             role: "supervisor",
-            name: "Quản trị viên",
+            name: "Administrator",
           }),
         )
 
