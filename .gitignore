@@ -2,3 +2,6 @@
 .vscode
 kafka/kafka1Data/*
 kafka/kafka2Data/*
+# git
+call-processing-service/app/.git/*
+call-monotoring-service/app/.git/*
