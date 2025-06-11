@@ -5,6 +5,7 @@ WORKDIR /app
 
 COPY pom.xml .
 COPY src ./src
+# ENV KAFKA_BROKER_URL=127.0.0.1
 
 RUN mvn clean package -DskipTests
 
@@ -15,6 +16,6 @@ WORKDIR /app
 
 COPY --from=builder /app/target/*.jar app.jar
 
-EXPOSE 8080
+EXPOSE 8083
 
 CMD ["java", "-jar", "app.jar"]
